@@ -213,7 +213,7 @@ def SimpleRNASystem(psf, system, ffs):
 
 # 0) set variables in the simulation
 gpu_id = "0"
-top_inp, param_inp = '/home/allenchen/brocspin/script/param_iConRNA.inp', '/home/allenchen/brocspin/script/top_iConRNA.inp'
+top_inp, param_inp = '/Users/achenjiaming/brocspin/script/param_iConRNA.inp', '/Users/achenjiaming/brocspin/script/top_iConRNA.inp'
 
 # input parameters
 parser = argparse.ArgumentParser()
@@ -332,12 +332,11 @@ elif ensemble == 'non':
 else:
     print('Only NPT, NVT, and non-periodic system are supported!')
 integrator = LangevinMiddleIntegrator(temperture, friction, dt)
-plat = Platform.getPlatformByName('CUDA')
-prop = {'Precision': 'mixed', 'DeviceIndex': gpu_id}
-simulation = Simulation(top, system, integrator, plat, prop)
+plat = Platform.getPlatformByName('CPU')
+simulation = Simulation(top, system, integrator, plat)
 simulation.context.setPositions(pdb.positions)
 simulation.context.setVelocitiesToTemperature(temperture)
-print(f'Langevin, CUDA, {temperture}')
+print(f'Langevin, CPU, {temperture}')
 
 print('\n################### Minimization, Equilibriation, Production simulation ####################')
 print('# minimizeEnergy:')
