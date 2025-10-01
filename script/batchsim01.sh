@@ -29,7 +29,7 @@ for ((i=0; i<${#TEMP[@]}; i++)); do
     --salt "$SALT" \
     > "$OUTPUT_DIR/run.log" 2>&1 
 
-  if [ $? -eq 0]; them
+  if [ $? -eq 0 ]; then
     mv system.pdb system.log system.chk system.xtc system.xml "$OUTPUT_DIR/" 2>/dev/null || true
     echo "Simulation for $PDB_FILE completed. Results are in $OUTPUT_DIR."
   else
