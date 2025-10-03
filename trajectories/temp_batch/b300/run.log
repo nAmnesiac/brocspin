@@ -1,0 +1,51 @@
+relative electric constant:  20.29365917204897
+Debye-Huckel screening length:  0.7849246248313698
+lmd:  0.0
+
+################## load coordinates, topology and parameters ###################
+
+################# constructe the HyRes force field ####################
+
+# get the NonBondedForce and HarmonicAngleForce: NonbondedForce HarmonicAngleForce
+
+# get bondlist
+
+# replace HarmonicAngle with Restricted Bending (ReB) potential
+
+# add custom nonbondedforce
+
+# add base stacking force
+    add  48 stacking pairs
+
+# add base pair force
+8 13 AU
+19 9 CG
+
+# Now, the system has:
+       HarmonicBondForce
+       HarmonicBondForce
+       PeriodicTorsionForce
+       CustomTorsionForce
+       CMAPTorsionForce
+       CustomNonbondedForce
+       CMMotionRemover
+       ReBAngleForce
+       LJ_ElecForce
+       StackingForce
+       AUpairForce
+       CGpairForce
+
+################### prepare simulation system####################
+This is a non-periodic system
+Langevin, CUDA, 300.0 K
+
+################### Minimization, Equilibriation, Production simulation ####################
+# minimizeEnergy:
+before:  4023.0261958989704 kJ/mol
+after:  -883.4935913482979 kJ/mol
+
+# Equilibriation running:
+
+# Production simulation running:
+
+# Finished!
