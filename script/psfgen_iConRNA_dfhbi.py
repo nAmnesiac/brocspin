@@ -5,7 +5,7 @@ import argparse
 import os
 
 # Global varibale
-RNA_topology = "/Users/achenjiaming/brocspin/script/top_iConRNA_dfhbi.inp"
+RNA_topology = "/home/allenchen/brocspin/script/top_iConRNA_dfhbi.inp"
 
 def main():
     parser = argparse.ArgumentParser(description="generate PSF for Hyres systems",
