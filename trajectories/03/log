@@ -1,0 +1,23 @@
+nohup: ignoring input
+relative electric constant:  20.29365917204897
+Debye-Huckel screening length:  0.7849246248313698
+lmd:  0.0
+
+################## load coordinates, topology and parameters ###################
+Traceback (most recent call last):
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/charmmpsffile.py", line 635, in loadParameters
+    bond.bond_type = parmset.bond_types[key]
+                     ~~~~~~~~~~~~~~~~~~^^^^^
+KeyError: ('A2', 'A7')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/allenchen/brocspin/script/run_dfhbi.py", line 306, in <module>
+    system = psf.createSystem(params, nonbondedMethod=CutoffNonPeriodic, constraints=HBonds)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/charmmpsffile.py", line 876, in createSystem
+    self.loadParameters(params)
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/charmmpsffile.py", line 637, in loadParameters
+    raise MissingParameter('Missing bond type for %r' % bond)
+openmm.app.internal.charmm.exceptions.MissingParameter: Missing bond type for <Bond; <Atom 1; 1 DFH [B2: A2]> -- <Atom 6; 1 DFH [B7: A7]>; type=None>
