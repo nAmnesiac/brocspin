@@ -1,0 +1,18 @@
+REMARK   1 CREATED WITH OPENMM 8.2, 2025-11-26
+CRYST1   70.000   70.000   70.000  90.00  90.00  90.00 P 1           1 
+HETATM    1  B1  DFH A   1      25.024   6.840   7.433  1.00  0.00           K  
+HETATM    2 B2   DFH A   1      24.384   4.809   8.876  1.00  0.00          Mn  
+HETATM    3 B3   DFH A   1      23.546   7.200   9.942  1.00  0.00          Mg  
+HETATM    4 B4   DFH A   1      23.297   9.341  10.371  1.00  0.00          Mg  
+HETATM    5 B5   DFH A   1      23.001  11.872  10.879  1.00  0.00          Sc  
+HETATM    6 B6   DFH A   1      22.758  10.063  12.836  1.00  0.00          Co  
+HETATM    7 B7   DFH A   1      26.832   3.637   8.182  1.00  0.00          Ga  
+TER       8      DFH A   1
+CONECT    1    2    3
+CONECT    2    1    3    7
+CONECT    3    1    2    4
+CONECT    4    3    6    5
+CONECT    5    4    6
+CONECT    6    4    5
+CONECT    7    2
+END

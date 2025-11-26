@@ -1,0 +1,187 @@
+<?xml version="1.0" ?>
+<System openmmVersion="8.2" type="System" version="1">
+	<PeriodicBoxVectors>
+		<A x="8" y="0" z="0"/>
+		<B x="0" y="8" z="0"/>
+		<C x="0" y="0" z="8"/>
+	</PeriodicBoxVectors>
+	<Particles>
+		<Particle mass="38.029"/>
+		<Particle mass="54.028"/>
+		<Particle mass="24.022"/>
+		<Particle mass="24.022"/>
+		<Particle mass="43.02"/>
+		<Particle mass="59.019"/>
+		<Particle mass="69.005"/>
+	</Particles>
+	<Constraints/>
+	<Forces>
+		<Force forceGroup="0" name="HarmonicBondForce" type="HarmonicBondForce" usesPeriodic="0" version="2">
+			<Bonds>
+				<Bond d=".258" k="83680" p1="0" p2="1"/>
+				<Bond d=".294" k="83680" p1="0" p2="2"/>
+				<Bond d=".27799999999999997" k="83680" p1="1" p2="2"/>
+				<Bond d=".281" k="83680" p1="1" p2="6"/>
+				<Bond d=".223" k="83680" p1="2" p2="3"/>
+				<Bond d=".263" k="83680" p1="3" p2="5"/>
+				<Bond d=".262" k="83680" p1="3" p2="4"/>
+				<Bond d=".268" k="83680" p1="4" p2="5"/>
+			</Bonds>
+		</Force>
+		<Force forceGroup="3" name="HarmonicBondForce" type="HarmonicBondForce" usesPeriodic="0" version="2">
+			<Bonds/>
+		</Force>
+		<Force forceGroup="2" name="PeriodicTorsionForce" type="PeriodicTorsionForce" usesPeriodic="0" version="2">
+			<Torsions>
+				<Torsion k="251.04000000000002" p1="0" p2="2" p3="3" p4="5" periodicity="1" phase="0"/>
+			</Torsions>
+		</Force>
+		<Force energy="k*min(dtheta, 2*pi-dtheta)^2; dtheta = abs(theta-theta0);pi = 3.141593;" forceGroup="4" name="CustomTorsionForce" type="CustomTorsionForce" usesPeriodic="0" version="3">
+			<PerTorsionParameters>
+				<Parameter name="k"/>
+				<Parameter name="theta0"/>
+			</PerTorsionParameters>
+			<GlobalParameters/>
+			<EnergyParameterDerivatives/>
+			<Torsions>
+				<Torsion p1="2" p2="0" p3="1" p4="3" param1="251.04000000000002" param2="0"/>
+				<Torsion p1="3" p2="5" p3="4" p4="2" param1="251.04000000000002" param2="0"/>
+			</Torsions>
+		</Force>
+		<Force forceGroup="5" name="CMAPTorsionForce" type="CMAPTorsionForce" usesPeriodic="0" version="2">
+			<Maps/>
+			<Torsions/>
+		</Force>
+		<Force cutoff="1" energy="(a/r6)^2-b/r6; r6=r^6;a=acoef(type1, type2);b=bcoef(type1, type2)" forceGroup="6" method="2" name="CustomNonbondedForce" switchingDistance="-1" type="CustomNonbondedForce" useLongRangeCorrection="0" useSwitchingFunction="0" version="3">
+			<PerParticleParameters>
+				<Parameter name="type"/>
+			</PerParticleParameters>
+			<GlobalParameters/>
+			<ComputedValues/>
+			<EnergyParameterDerivatives/>
+			<Particles>
+				<Particle param1="0"/>
+				<Particle param1="1"/>
+				<Particle param1="2"/>
+				<Particle param1="2"/>
+				<Particle param1="1"/>
+				<Particle param1="1"/>
+				<Particle param1="1"/>
+			</Particles>
+			<Exclusions>
+				<Exclusion p1="0" p2="1"/>
+				<Exclusion p1="0" p2="2"/>
+				<Exclusion p1="1" p2="2"/>
+				<Exclusion p1="1" p2="6"/>
+				<Exclusion p1="2" p2="3"/>
+				<Exclusion p1="3" p2="4"/>
+				<Exclusion p1="3" p2="5"/>
+				<Exclusion p1="4" p2="5"/>
+				<Exclusion p1="0" p2="3"/>
+				<Exclusion p1="0" p2="6"/>
+				<Exclusion p1="1" p2="3"/>
+				<Exclusion p1="2" p2="4"/>
+				<Exclusion p1="2" p2="5"/>
+				<Exclusion p1="2" p2="6"/>
+			</Exclusions>
+			<Functions>
+				<Function name="acoef" type="Discrete2DFunction" version="1" xsize="3" ysize="3">
+					<Values>
+						<Value v=".010106851017997643"/>
+						<Value v=".010106851017997643"/>
+						<Value v=".005371195011855686"/>
+						<Value v=".010106851017997643"/>
+						<Value v=".010106851017997643"/>
+						<Value v=".005371195011855686"/>
+						<Value v=".005371195011855686"/>
+						<Value v=".005371195011855686"/>
+						<Value v=".002649450353261975"/>
+					</Values>
+				</Function>
+				<Function name="bcoef" type="Discrete2DFunction" version="1" xsize="3" ysize="3">
+					<Values>
+						<Value v=".013075000000000002"/>
+						<Value v=".013075000000000002"/>
+						<Value v=".0069485910750000015"/>
+						<Value v=".013075000000000002"/>
+						<Value v=".013075000000000002"/>
+						<Value v=".0069485910750000015"/>
+						<Value v=".0069485910750000015"/>
+						<Value v=".0069485910750000015"/>
+						<Value v=".0034275328000000016"/>
+					</Values>
+				</Function>
+			</Functions>
+			<InteractionGroups/>
+		</Force>
+		<Force forceGroup="0" frequency="1" name="CMMotionRemover" type="CMMotionRemover" version="1"/>
+		<Force energy="kt*(theta-theta0)^2/(sin(theta)^2);" forceGroup="0" name="ReBAngleForce" type="CustomAngleForce" usesPeriodic="0" version="3">
+			<PerAngleParameters>
+				<Parameter name="theta0"/>
+				<Parameter name="kt"/>
+			</PerAngleParameters>
+			<GlobalParameters/>
+			<EnergyParameterDerivatives/>
+			<Angles>
+				<Angle p1="0" p2="1" p3="2" param1="1.1594222220998334" param2="251.04000000000002"/>
+				<Angle p1="0" p2="2" p3="1" param1=".9339256827421656" param2="251.04000000000002"/>
+				<Angle p1="0" p2="2" p3="3" param1="1.9001399566462267" param2="251.04000000000002"/>
+				<Angle p1="1" p2="0" p3="2" param1="1.0482447487477944" param2="251.04000000000002"/>
+				<Angle p1="2" p2="3" p3="5" param1="2.1846286247213023" param2="251.04000000000002"/>
+				<Angle p1="3" p2="4" p3="5" param1="1.0410888988146176" param2="251.04000000000002"/>
+				<Angle p1="4" p2="5" p3="3" param1="1.0304423903774522" param2="251.04000000000002"/>
+				<Angle p1="5" p2="3" p3="4" param1="1.070235897322923" param2="251.04000000000002"/>
+				<Angle p1="6" p2="1" p3="0" param1="1.6098917020395693" param2="251.04000000000002"/>
+				<Angle p1="6" p2="1" p3="2" param1="2.3685863278815047" param2="251.04000000000002"/>
+			</Angles>
+		</Force>
+		<Force cutoff="1.8" energy="138.935456/er*charge1*charge2/r*exp(-r/dh)*kpmg;&#x0A;                dh=0.7849246248313698; er=20.018455219072163; kpmg=select(lb1+lb2,1,lmd); lmd=0.0&#x0A;              " forceGroup="0" method="2" name="LJ_ElecForce" switchingDistance="1.6" type="CustomNonbondedForce" useLongRangeCorrection="0" useSwitchingFunction="1" version="3">
+			<PerParticleParameters>
+				<Parameter name="charge"/>
+				<Parameter name="lb"/>
+			</PerParticleParameters>
+			<GlobalParameters/>
+			<ComputedValues/>
+			<EnergyParameterDerivatives/>
+			<Particles>
+				<Particle param1="0" param2="2"/>
+				<Particle param1="0" param2="2"/>
+				<Particle param1="0" param2="2"/>
+				<Particle param1="0" param2="2"/>
+				<Particle param1="0" param2="2"/>
+				<Particle param1="0" param2="2"/>
+				<Particle param1="0" param2="2"/>
+			</Particles>
+			<Exclusions>
+				<Exclusion p1="0" p2="1"/>
+				<Exclusion p1="0" p2="2"/>
+				<Exclusion p1="1" p2="2"/>
+				<Exclusion p1="0" p2="3"/>
+				<Exclusion p1="1" p2="3"/>
+				<Exclusion p1="2" p2="3"/>
+				<Exclusion p1="2" p2="4"/>
+				<Exclusion p1="3" p2="4"/>
+				<Exclusion p1="2" p2="5"/>
+				<Exclusion p1="3" p2="5"/>
+				<Exclusion p1="4" p2="5"/>
+				<Exclusion p1="0" p2="6"/>
+				<Exclusion p1="1" p2="6"/>
+				<Exclusion p1="2" p2="6"/>
+			</Exclusions>
+			<Functions/>
+			<InteractionGroups/>
+		</Force>
+		<Force energy="eps_stack*(5*(r0/r)^10-6.0*(r0/r)^6); r=distance(g1,g2);" forceGroup="0" groups="2" name="StackingForce" type="CustomCentroidBondForce" usesPeriodic="0" version="3">
+			<PerBondParameters>
+				<Parameter name="eps_stack"/>
+			</PerBondParameters>
+			<GlobalParameters>
+				<Parameter default=".34" name="r0"/>
+			</GlobalParameters>
+			<EnergyParameterDerivatives/>
+			<Groups/>
+			<Bonds/>
+			<Functions/>
+		</Force>
+	</Forces>
+</System>

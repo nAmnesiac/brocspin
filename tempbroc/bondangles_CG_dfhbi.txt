@@ -1,0 +1,108 @@
+Info) VMD for MACOSXARM64, version 1.9.4a57 (April 27, 2022)
+Info) http://www.ks.uiuc.edu/Research/vmd/                         
+Info) Email questions and bug reports to vmd@ks.uiuc.edu           
+Info) Please include this reference in published work using VMD:   
+Info)    Humphrey, W., Dalke, A. and Schulten, K., `VMD - Visual   
+Info)    Molecular Dynamics', J. Molec. Graphics 1996, 14.1, 33-38.
+Info) -------------------------------------------------------------
+Info) Multithreading available, 10 CPUs, ISA dispatch enabled.
+Info) Dynamically loaded 1 plugins in directory:
+Info) /Applications/VMD 1.9.4a57-arm64-Rev12.app/Contents/vmd/plugins/MACOSXARM64/molfile
+dfhbi_CG.pdb
+Info) Using plugin pdb for structure file dfhbi_CG.pdb
+Info) Using plugin pdb for coordinates from file dfhbi_CG.pdb
+Info) Determining bond structure from distance search ...
+Info) Analyzing structure ...
+Info)    Atoms: 7
+Info)    Bonds: 0
+Info)    Angles: 0  Dihedrals: 0  Impropers: 0  Cross-terms: 0
+Info)    Bondtypes: 0  Angletypes: 0  Dihedraltypes: 0  Impropertypes: 0
+Info)    Residues: 7
+Info)    Waters: 0
+Info)    Segments: 1
+Info)    Fragments: 7   Protein: 0   Nucleic: 0
+Info) Finished with coordinate file dfhbi_CG.pdb.
+0
+0
+
+Manually defining bonds based on specified connectivity...
+
+    {6 1}  
+    {1 2}  
+    {1 0}  
+    {0 2}  
+    {2 3}  
+    {3 5}  
+    {3 4}  
+    {4 5}  
+
+7
+Bonds defined: B7-B2, B2-B3, B2-B1, B1-B3, B3-B4, B4-B6, B4-B5, B5-B6
+atomselect7
+7
+
+=========================================
+STRUCTURE INFORMATION
+=========================================
+
+Total atoms: 7
+Residue: DFH
+Residue ID: 1
+
+=========================================
+BOND LENGTH ANALYSIS
+=========================================
+
+0
+Bond   1:   B1 (atom  1) --   B2 (atom  2)  Length: 2.5810 Å
+Bond   2:   B1 (atom  1) --   B3 (atom  3)  Length: 2.9424 Å
+Bond   3:   B2 (atom  2) --   B7 (atom  7)  Length: 2.8058 Å
+Bond   4:   B2 (atom  2) --   B3 (atom  3)  Length: 2.7820 Å
+Bond   5:   B3 (atom  3) --   B4 (atom  4)  Length: 2.2297 Å
+Bond   6:   B4 (atom  4) --   B6 (atom  6)  Length: 2.6344 Å
+Bond   7:   B4 (atom  4) --   B5 (atom  5)  Length: 2.6179 Å
+Bond   8:   B5 (atom  5) --   B6 (atom  6)  Length: 2.6783 Å
+
+=========================================
+ANGLE ANALYSIS
+=========================================
+
+0
+Angle   1:   B2 (atom  2) --   B1 (atom  1) --   B3 (atom  3)  Angle: 60.06°
+Angle   2:   B7 (atom  7) --   B2 (atom  2) --   B3 (atom  3)  Angle: 135.71°
+Angle   3:   B7 (atom  7) --   B2 (atom  2) --   B1 (atom  1)  Angle: 92.24°
+Angle   4:   B3 (atom  3) --   B2 (atom  2) --   B1 (atom  1)  Angle: 66.43°
+Angle   5:   B2 (atom  2) --   B3 (atom  3) --   B1 (atom  1)  Angle: 53.51°
+Angle   6:   B2 (atom  2) --   B3 (atom  3) --   B4 (atom  4)  Angle: 162.27°
+Angle   7:   B1 (atom  1) --   B3 (atom  3) --   B4 (atom  4)  Angle: 108.87°
+Angle   8:   B3 (atom  3) --   B4 (atom  4) --   B6 (atom  6)  Angle: 125.17°
+Angle   9:   B3 (atom  3) --   B4 (atom  4) --   B5 (atom  5)  Angle: 172.80°
+Angle  10:   B6 (atom  6) --   B4 (atom  4) --   B5 (atom  5)  Angle: 61.32°
+Angle  11:   B4 (atom  4) --   B5 (atom  5) --   B6 (atom  6)  Angle: 59.65°
+Angle  12:   B4 (atom  4) --   B6 (atom  6) --   B5 (atom  5)  Angle: 59.04°
+
+=========================================
+SUMMARY
+=========================================
+
+Total atoms: 7
+Total bonds detected: 8
+Total angles calculated: 12
+
+=========================================
+ATOMIC COORDINATES
+=========================================
+
+atomselect106
+Atom  1 (  B1): x=  25.001 y=   6.909 z=   7.438
+Atom  2 (  B2): x=  24.413 y=   4.776 z=   8.767
+Atom  3 (  B3): x=  23.601 y=   7.125 z=  10.017
+Atom  4 (  B4): x=  23.308 y=   9.282 z=  10.500
+Atom  5 (  B5): x=  23.196 y=  11.875 z=  10.842
+Atom  6 (  B6): x=  22.451 y=  10.217 z=  12.809
+Atom  7 (  B7): x=  26.873 y=   3.578 z=   8.146
+
+
+vmd > kill: illegal process id: %1
+child process exited abnormally
+vmd > 
