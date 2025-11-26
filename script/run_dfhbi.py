@@ -342,8 +342,42 @@ print(f'Langevin, CUDA, {temperture}')
 print('\n################### Minimization, Equilibriation, Production simulation ####################')
 print('# minimizeEnergy:')
 print('before: ', simulation.context.getState(getEnergy=True).getPotentialEnergy())
+
+
+forces = system.getForces()
+
+for i, force in enumerate(forces):
+    # Assign each force to a unique group
+    force.setForceGroup(i)
+
+    # Get energy for that force group
+    state = simulation.context.getState(getEnergy=True, groups={i})
+    energy = state.getPotentialEnergy()
+
+    print(f"{i}: {force.getName()} = {energy}")
+
 simulation.minimizeEnergy(maxIterations=500000, tolerance=0.01)
 print('after: ', simulation.context.getState(getEnergy=True).getPotentialEnergy())
+
+
+forces = system.getForces()
+
+for i, force in enumerate(forces):
+    # Assign each force to a unique group
+    force.setForceGroup(i)
+
+    # Get energy for that force group
+    state = simulation.context.getState(getEnergy=True, groups={i})
+    energy = state.getPotentialEnergy()
+
+    print(f"{i}: {force.getName()} = {energy}")
+
+state = simulation.context.getState(getPositions=True)
+positions = state.getPositions()
+with open('m.pdb', 'w') as f:
+    PDBFile.writeFile(simulation.topology, positions, f)
+
+
 
 print('\n# Equilibriation running:')
 simulation.step(equil_step)
