@@ -213,7 +213,7 @@ def SimpleRNASystem(psf, system, ffs):
 
 # 0) set variables in the simulation
 gpu_id = "1"
-top_inp, param_inp = '/home/allenchen/brocspin/script/param.inp', '/home/allenchen/brocspin/script/top3.inp'
+top_inp, param_inp = '/home/allenchen/brocspin/script/param_iConRNA_dfhbi.inp', '/home/allenchen/brocspin/script/top_iConRNA_dfhbi.inp'
 
 # input parameters
 parser = argparse.ArgumentParser()
