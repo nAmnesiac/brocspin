@@ -36,7 +36,7 @@ NCN   CO    120.0      2.95   ! C/U: NB-ND
 NCC   OCN   250.0      2.49   ! U: NA-NB
 OCN   CO    150.0      2.99   ! U: NA-ND
 !bonds in DFHBI
-A7    A1    130.0      2.81
+A7    A2    130.0      2.81
 A2    A3    130.0      2.78
 A2    A1    130.0      2.58
 A1    A3    130.0      2.94
