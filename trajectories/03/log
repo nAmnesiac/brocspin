@@ -4,20 +4,56 @@ Debye-Huckel screening length:  0.7849246248313698
 lmd:  0.0
 
 ################## load coordinates, topology and parameters ###################
-Traceback (most recent call last):
-  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/charmmpsffile.py", line 635, in loadParameters
-    bond.bond_type = parmset.bond_types[key]
-                     ~~~~~~~~~~~~~~~~~~^^^^^
-KeyError: ('A2', 'A7')
 
-During handling of the above exception, another exception occurred:
+################# constructe the HyRes force field ####################
 
+# get the NonBondedForce and HarmonicAngleForce: NonbondedForce HarmonicAngleForce
+
+# get bondlist
+
+# replace HarmonicAngle with Restricted Bending (ReB) potential
+
+# add custom nonbondedforce
+
+# add base stacking force
+    add  0 stacking pairs
+
+# add base pair force
+
+# Now, the system has:
+       HarmonicBondForce
+       HarmonicBondForce
+       PeriodicTorsionForce
+       CustomTorsionForce
+       CMAPTorsionForce
+       CMMotionRemover
+       ReBAngleForce
+       LJ_ElecForce
+       StackingForce
+
+################### prepare simulation system####################
+This is a non-periodic system
+Langevin, CUDA, 300.0 K
+
+################### Minimization, Equilibriation, Production simulation ####################
+# minimizeEnergy:
+before:  1322.1747379241513 kJ/mol
+after:  136.24670873071227 kJ/mol
+
+# Equilibriation running:
+
+# Production simulation running:
 Traceback (most recent call last):
-  File "/home/allenchen/brocspin/script/run_dfhbi.py", line 306, in <module>
-    system = psf.createSystem(params, nonbondedMethod=CutoffNonPeriodic, constraints=HBonds)
-             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/charmmpsffile.py", line 876, in createSystem
-    self.loadParameters(params)
-  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/charmmpsffile.py", line 637, in loadParameters
-    raise MissingParameter('Missing bond type for %r' % bond)
-openmm.app.internal.charmm.exceptions.MissingParameter: Missing bond type for <Bond; <Atom 1; 1 DFH [B2: A2]> -- <Atom 6; 1 DFH [B7: A7]>; type=None>
+  File "/home/allenchen/brocspin/script/run_dfhbi.py", line 361, in <module>
+    simulation.step(total_step)
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/simulation.py", line 150, in step
+    self._simulate(endStep=self.currentStep+steps)
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/simulation.py", line 263, in _simulate
+    self._generate_reports(unwrapped, False)
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/simulation.py", line 282, in _generate_reports
+    reporter.report(self, state)
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/statedatareporter.py", line 204, in report
+    self._checkForErrors(simulation, state)
+  File "/home/allenchen/miniforge3/envs/brocspin/lib/python3.11/site-packages/openmm/app/statedatareporter.py", line 363, in _checkForErrors
+    raise ValueError('Energy is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently-Asked-Questions#nan')
+ValueError: Energy is NaN.  For more information, see https://github.com/openmm/openmm/wiki/Frequently-Asked-Questions#nan
